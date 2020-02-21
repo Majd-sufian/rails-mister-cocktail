@@ -1,14 +1,20 @@
-<div class="container">
-  <h1 class="text-center">Our Cocktails</h1>
-  <div class="pad10">
-    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+<h1 class="text-center text-underline text-brand mt-2 mb-5" style="color: #010a43">Delicious cocktails</h1>
+
+
+<div class="row">
+    <% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="card-product">
+      <%= image_tag cocktail.picture %>
+  <div class="card-product-infos">
+    <h2> <%= link_to cocktail.name , cocktail_path(cocktail)  %> </h2>
+    <br>
+      </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 
-<br>
-<br>
-    <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail.name , cocktail_path(cocktail), class: "btn btn-primary"%>
-      <br>
-      <br>
-    <% end %>
-</div>
+
+
+

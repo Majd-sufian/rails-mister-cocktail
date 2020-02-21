@@ -1,9 +1,12 @@
-<div class="container pad20">
 
-  <h1 class="text-underline"> <%= @cocktail.name %> </h1>
 
-  <% if @cocktail.photo %>
-    <%= image_tag @cocktail.photo %>
+
+
+
+<h1 class="text-center"><%= @cocktail.name %> <span class="badge badge-secondary text-underline">New</span></h1>
+
+  <% if @cocktail.picture? %>
+    <%= image_tag @cocktail.picture, width: 250, height: 300, crop: :fill  %>
   <% end %>
 
   <div class="pad10">
