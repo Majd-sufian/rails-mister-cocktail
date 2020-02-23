@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
- before_action :set_dose, only: [:destroy]
+# endbefore_action :set_dose, only: [:destroy]
 
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
@@ -19,16 +19,12 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @cocktail = @dose.cocktail
+    @dose = Dose.find(params[:id])
     @dose.destroy
-    redirect_to cocktail_path(@cocktail)
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   private
-
-  def set_dose
-    @dose = Dose.find(params[:id])
-  end
 
   def dose_params
     params.require(:dose).permit(:description, :ingredient_id)

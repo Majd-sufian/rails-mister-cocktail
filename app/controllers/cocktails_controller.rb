@@ -7,6 +7,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
     # @review = Review.new
   end
 
@@ -23,6 +24,16 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def top
+    @cocktails = Cocktail.all
+    @results = @cocktails.last(10)
+  end
+
+  def search
+    @cocktail = Cocktail.where(name: params[:name])
+    @cocktailSearch = @cocktail
+  end
+
   private
 
   def set_cocktail
@@ -30,6 +41,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
