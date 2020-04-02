@@ -1,11 +1,16 @@
 import Typed from 'typed.js';
 
-const loadDynamicBannerText = () => {
-  new Typed('#banner-typed-text', {
-    strings: ["YAAA YOU ARE IN THE RIGHT PLACE", "FIND A COCKTAIL"],
-    typeSpeed: 30,
-    loop: true
-  });
+const cards = document.querySelectorAll('.card');
+
+function transition() {
+  if (this.classList.contains('active')) {
+    this.classList.remove('active')
+  } else { 
+    this.classList.add('active');
+  }
 }
 
-export { loadDynamicBannerText };
+cards.forEach(card => card.addEventListener('click', transition));
+
+
+export { transition  };

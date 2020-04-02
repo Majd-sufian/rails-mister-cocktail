@@ -18,5 +18,14 @@ import 'bootstrap';
 console.log('Hello World from Webpacker')
 
 
-import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+import { transition } from '../components/banner';
+transition();
+
+// import { openModal } from '../components/banner';
+// openModal();
+
+// import { closeModal } from '../components/banner';
+// closeModal();
+
+// import { outsideClick } from '../components/banner';
+// outsideClick();

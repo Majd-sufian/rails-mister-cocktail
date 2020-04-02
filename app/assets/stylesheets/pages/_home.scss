@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.home-container-image-box {
+	background: red;
+}
+
+.home-container-image-box {
+  background: url("https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1286&q=80") ;
+  background-color: white;
+  min-height: 98vh;
+  /*padding-bottom: 100px;*/
+  /*margin: auto;*/
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-family: "Raleway";
+  color: white;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+
+.discover-box {
+  background: transparent;
+  width: 530px;
+  height: 150px;
+  position: absolute;
+  right: 10%;
+  bottom: 42%;
+  font-family: sans-serif;
+}
+
+.btn a {
+	text-decoration: none;
+	color: white;
+}

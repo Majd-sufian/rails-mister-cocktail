@@ -3,6 +3,7 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @firstThirtyCocktails = @cocktails.first(60)
   end
 
   def show
@@ -30,8 +31,7 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    @cocktail = Cocktail.where(name: params[:name])
-    @cocktailSearch = @cocktail
+    @cocktailSearch = Cocktail.where(name: params[:name])
   end
 
   private

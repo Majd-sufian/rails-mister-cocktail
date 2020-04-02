@@ -1,33 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light  sticky-top ">
-<%= link_to "Delicious cocktails", cocktails_path , style: "color:#66DE89"%>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<%= render 'components/navbar' %>
 
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <%= link_to "Home", cocktails_path , class:"nav-link"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'top 10' , top_cocktails_path ,class:"nav-link" %>
-      </li>
-        <p>
-        <span id="banner-typed-text"></span>
-        </p>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
 
-<br>
+
+
 
 <div class="row">
-    <% @cocktails.each do |cocktail| %>
+    <% @firstThirtyCocktails.each do |cocktail| %>
   <div class="col-xs-12 col-sm-4">
     <div class="card-product">
       <%= image_tag cocktail.picture %>
@@ -41,5 +20,14 @@
 </div>
 
 
-
+<div class="footer mt-5">
+  <p class="text-center">follow us</p>
+  <div class="text-center">
+    <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-fw fa-github"></i></a>
+    <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+    <p class="text-center">This website was coded with <i class="fas fa-heart"></i> at Le Wagon.</p>
+  </div>
+</div>
 
